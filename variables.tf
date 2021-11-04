@@ -14,6 +14,6 @@ variable "event_source_suffix" {
 }
 
 variable "topic_filters" {
-  type        = List(string)
+  type        = list(string)
   description = "List of notification topics to send to EventBridge"
 }
