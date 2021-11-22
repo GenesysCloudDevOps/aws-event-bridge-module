@@ -25,11 +25,6 @@ module "AwsEventBridgeIntegration" {
 |------|---------|
 | <a name="provider_genesyscloud"></a> [genesyscloud](https://registry.terraform.io/providers/MyPureCloud/genesyscloud/latest) | >= 0.13.3 |
 
-source             = "git::https://github.com/GenesysCloudDevOps/aws-event-bridge-module.git?ref=v0.0.1"
-   aws_account_id   = "335611188682"
-   aws_account_region   = "us-west-2"
-   event_source_suffix     = "-sample-eb"
-   topic_filters = ["v2.audits.entitytype.{id}.entityid.{id}","v2.analytics.flow.{id}.aggregates"]
 
 ## Inputs
 
