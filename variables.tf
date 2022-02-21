@@ -17,3 +17,8 @@ variable "topic_filters" {
   type        = list(string)
   description = "List of notification topics to send to EventBridge"
 }
+
+variable "integration_name" {
+  type        = string
+  description = "Name of the integration"
+}
