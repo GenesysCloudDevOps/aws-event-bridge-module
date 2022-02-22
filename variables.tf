@@ -21,4 +21,5 @@ variable "topic_filters" {
 variable "integration_name" {
   type        = string
   description = "Name of the integration"
+  default     = "Amazon EventBridge Source"
 }
