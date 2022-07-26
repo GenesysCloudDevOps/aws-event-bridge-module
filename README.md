@@ -32,7 +32,7 @@ resource "aws_cloudwatch_event_bus" "genesys_audit_event_bridge" {
 ## Requirements
 
 | Name | Version |
-|------|---------|`
+|------|---------|
 | <a name="provider_terraform"></a>[terraform](https://www.terraform.io/) | >= 1.0 |
 
 ## Providers
