@@ -5,7 +5,7 @@ Genesys Cloud to be published to AWS EventBridge. The documentation for the Gene
 
 ```hcl
 module "AwsEventBridgeIntegration" {
-   source              = "git::https://github.com/GenesysCloudDevOps/aws-event-bridge-module.git?ref=v0.0.3"
+   source              = "git::https://github.com/GenesysCloudDevOps/aws-event-bridge-module.git?ref=v0.0.4"
    aws_account_id      = "335611188682"
    aws_account_region  = "us-west-2"
    event_source_suffix = "-sample-eb"
@@ -13,7 +13,7 @@ module "AwsEventBridgeIntegration" {
 }
 ```
 
-The code above will create an AWS EventBridge integration. Genesys Cloud will create a partner event source in your AWS account. However, you will still need to create an event bridge for that partner event source. This can be done by creating by using the AWS terraform provider and then using the Terraform code below.
+The code above will create an AWS EventBridge integration. Genesys Cloud will create a partner event source in your AWS account. However, you will still need to create an event bridge for that partner event source. This can be done by using the AWS terraform provider and then using the Terraform code below.
 
 ```
 data "aws_cloudwatch_event_source" "genesys_event_bridge" {
