@@ -13,10 +13,26 @@ module "AwsEventBridgeIntegration" {
 }
 ```
 
+The code above will create an AWS EventBridge integration. Genesys Cloud will create a partner event source in your AWS account. However, you will still need to create an event bridge for that partner event source. This can be done by creating by using the AWS terraform provider and then using the Terraform code below.
+
+```
+data "aws_cloudwatch_event_source" "genesys_event_bridge" {
+  depends_on = [
+    module.AwsEventBridgeIntegration
+  ]
+  name_prefix = "aws.partner/genesys.com"
+}
+
+resource "aws_cloudwatch_event_bus" "genesys_audit_event_bridge" {
+  name              = data.aws_cloudwatch_event_source.genesys_event_bridge.name
+  event_source_name = data.aws_cloudwatch_event_source.genesys_event_bridge.name
+}
+```
+
 ## Requirements
 
 | Name | Version |
-|------|---------|
+|------|---------|`
 | <a name="provider_terraform"></a>[terraform](https://www.terraform.io/) | >= 1.0 |
 
 ## Providers
