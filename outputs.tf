@@ -1,3 +1,3 @@
 output "id" {
-  value = resource.genesyscloud_integration.AwsEventBridgeIntegration.id
+  value = genesyscloud_integration.AwsEventBridgeIntegration.id
 }
